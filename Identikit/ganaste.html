@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perdiste</title>
+  <link rel="icon" href="imagenes/roman.jpg">
+  <style>
+    body {
+      background-color: #d0e7ff; /* Fondo azul claro */
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      color: #00264d;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    h1 {
+      font-size: 48px;
+      color: #00264d;
+      margin-bottom: 10px;
+    }
+
+    .icono {
+      font-size: 48px;
+      color: #ff4d4d; /* Rojo para el ícono */
+      margin-left: 10px;
+    }
+
+    p {
+      font-size: 20px;
+      color: #333;
+      margin-bottom: 30px;
+    }
+
+    button {
+      background-color: #333;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: rgb(21, 211, 21);
+    }
+  </style>
+</head>
+
+<body>
+  <h1> Correcto! <br> ✅</h1>
+  <p> ¡Perfecto! Sigue con la Trivia</p>
+  <button onclick="Seguir()"> Siguiente pregunta</button>
+
+  <script>
+    function Seguir() {
+      window.location.href = "trivia2.html"; 
+    }
+  </script>
+</body>
+
+</html>

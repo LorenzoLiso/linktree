@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Trivia de Países</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap" rel="stylesheet">
+  <link rel="icon" href="imagenes/roman.jpg">
+</head>
+
+<body>
+  <style>
+   nav {
+      background-color: #99ccff;
+      text-align: right;
+      padding: 10px 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    nav ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    nav li {
+      display: inline-block;
+      margin-right: 15px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #003366;
+      font-weight: bold;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+    body {
+      background-color: #e6f7ff;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      color: #00264d;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      color: #333;
+      border: 3px solid #B0E0E6;
+      padding: 10px;
+      border-radius: 10px;
+      display: inline-block;
+      background-color: #ffffff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    #pregunta {
+      font-size: 30px;
+      margin-bottom: 20px;
+      margin-top: -20px;
+    }
+
+    img {
+      width: 300px;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    button {
+      color: #00264d;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin-top: 20px;
+      cursor: pointer;
+      width: 80%;
+      max-width: 400px;
+      background-color: #cce7ff;
+      border-radius: 10px;
+      border: 1px solid #B0E0E6;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    a {text-decoration: none;
+      color: #00509e;}
+  </style>
+  <nav>
+    <ul>
+      <li> <a href="Index.html"> Inicio </a></li>
+      <li> <a href="tabla.html"> Tabla </a></li>
+      <li> <a href="trivia1.html"> Trivia </a></li>
+      <li> <a href="video1.html"> Videos</a></li>
+    </ul>
+  </nav>
+
+  <center>
+    <h1>🎯 Trivia de Países </h1>
+    <div id="Trivia">
+      <p></p>
+    </div>
+    <p id="pregunta">¿De qué país es esta bandera? </p>
+    <img src="imagenes/Nicaragua.png" alt="Bandera">
+    <div id="respuestas">
+      <button onclick="redirigir(false)">Francia</button>
+      <button onclick="redirigir(false)">Cuba</button><br>
+      <button onclick="redirigir(false)">El Salvador</button>
+      <button onclick="redirigir(true)">Nicaragua</button>
+    </div>
+
+  </center>
+
+  <script>
+    function redirigir(correcto) {
+      if (correcto) {
+        window.location.href = "ganaste2.html";
+      } else {
+        window.location.href = "perdiste.html";
+      }
+    }
+  </script>
+</body>
+
+</html>
