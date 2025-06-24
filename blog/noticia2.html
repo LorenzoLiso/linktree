@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boca MDC</title>
+    <link rel="stylesheet" href="noticia.css">
+</head>
+
+<body>
+    <header class="top-bar">
+        <span class="menu-icon" id="menuBtn">☰</span>
+        <span class="club-title"> BOCA JUNIORS <span>\ NEWS</span></span>
+        <div class="side-menu" id="sideMenu">
+            <ul>
+                <li><a href="index.html">NEWS</a></li>
+                <li><a href="players.html">TEAM </a></li>
+                <li><a href="https://www.bocashop.com.ar/" target="_blank">SHOP</a></li>
+            </ul>
+            </nav>
+        </div>
+        <img src="imagenes/boca.png" alt="Boca Juniors Shield" class="shield-logo">
+    </header>
+
+    <section class="banner">
+        <h2>FÚTBOL NOTICIAS</h2>
+    </section>
+
+    <div class="container">
+        <main class="contenido">
+            <article>
+                <p>El conjunto azul y amarillo enfrentará a Benfica, Bayern Munich y Auckland City con el objetivo de
+                    avanzar a octavos de final.</p>
+                <p>El xeneize accedió al certamen a través del ranking de la Confederación Sudamericana de Fútbol
+                    (Conmebol) y el sorteo del fixture lo dejó en el grupo C con Benfica de Portugal, Bayern Munich de
+                    Alemania y Auckland City de Nueva Zelanda.</p>
+                <img src="imagenes/benfica.avif" alt="Benfica" class="content-img">
+                <p>El conjunto del próximo DT de Boca debutará el lunes 16 de junio vs. las Águilas de Ángel Di María y
+                    Nicolás Otamendi en el Hard Rock Stadium de Miami. Será un partido clave para ambos elencos porque,
+                    a priori y aunque en el fútbol no hay lógica, son los que pelearán por la clasificación por detrás
+                    del combinado bávaro. Justamente los teutones serán el siguiente rival de la institución del barrio
+                    porteño de La Boca el viernes 20 en el mismo escenario. En la tercera jornada de la zona, Boca
+                    chocará con el oponente de menor jerarquía, Auckland City. El encuentro que decidirá su futuro en el
+                    torneo será el martes 24 de junio en el GEODIS Park de Nashville.</p>
+                <h2>Fixture de Boca en el grupo C del Mundial de Clubes 2025</h2>
+                <ol class="fixture-list">
+                    <li>
+                        <span class="match-number">1</span>
+                        <span>Boca Juniors vs. Benfica - Lunes 16 de junio a las 19 en el Hard Rock Stadium de
+                            Miami.</span>
+                    </li>
+                    <li>
+                        <span class="match-number">2</span>
+                        <span>Bayern Munich vs. Boca Juniors - Viernes 20 de junio a las 22 en el Hard Rock Stadium de
+                            Miami.</span>
+                    </li>
+                    <li>
+                        <span class="match-number">3</span>
+                        <span>Auckland City vs. Boca Juniors - Martes 24 de junio a las 16 en the GEODIS Park de
+                            Nashville.</span>
+                    </li>
+                </ol>
+                <img src="imagenes/bayern.jpg" alt="Bayern Munich" class="content-img">
+                <p>Ninguno de los cuatro clubes que integran el grupo C accedió al Mundial de Clubes como campeón de su
+                    continente. Bayern Munich y Benfica se clasificaron a través del ranking de la UEFA, mientras que el
+                    elenco neozelandés logró su boleto por el mismo camino pero en la Confederación de Fútbol de Oceanía
+                    (OFC).</p>
+                <p>En caso de ocupar el primer o segundo lugar de la tabla de posiciones al término de las tres jornadas
+                    de la etapa inicial, Boca Juniors se clasificará entre los 16 mejores equipos de la Copa del Mundo
+                    de clubes y enfrentará a un equipo del grupo D, en el que están Flamengo de Brasil, Chelsea de
+                    Inglaterra, León de México y Esperance de Túnez. De terminar tercero o cuarto, cerrará su
+                    participación en el campeonato.</p>
+                <p>En un hipotético acceso hasta cuartos de final, se podría cruzar contra clubes que conforman las
+                    zonas A (Inter Miami de Estados Unidos, Al Ahly de Egipto, Palmeiras de Brasil y Porto de Portugal)
+                    y B (PSG de Francia, Atlético Madrid de España, Botafogo de Brasil y Seattle Sounders de Estados
+                    Unidos).</p>
+            </article>
+        </main>
+
+        <aside class="sidebar">
+            <h3>Noticias Relacionadas</h3>
+            <ul>
+                <li><a href="noticia3.html">20/06/2025 - Boca vs Auckland</a></li>
+                <li><a href="noticia1.html">20/06/2025 - Boca vs Bayern</a></li>
+                <li><a href="noticia4.html">16/06/2025 - Boca vs Benfica</a></li>
+                <li><a href="noticia5.html">5/06/2025 - Russo a Boca</a></li>
+            </ul>
+        </aside>
+    </div>
+
+    <footer class="footer">
+        <p>© 2025 Juntos Siempre - Boca Juniors. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Menú hamburguesa
+        const menuBtn = document.getElementById('menuBtn');
+        const sideMenu = document.getElementById('sideMenu');
+        let menuOpen = false;
+
+        menuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            menuOpen = !menuOpen;
+            sideMenu.classList.toggle('active', menuOpen);
+
+            // Cerrar estadísticas si están abiertas
+            document.querySelectorAll('.toggle-stats:checked').forEach(checkbox => {
+                checkbox.checked = false;
+            });
+        });
+
+        document.addEventListener('click', (e) => {
+            if (menuOpen && !sideMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+                sideMenu.classList.remove('active');
+                menuOpen = false;
+            }
+        });
+
+        // Preloader
+        window.addEventListener('load', () => {
+            const preloader = document.querySelector('.preloader');
+            preloader.classList.add('fade-out');
+            setTimeout(() => {
+                preloader.style.display = 'none';
+            }, 500); // Match fade-out duration
+        });
+    </script>
+</body>
+
+</html>

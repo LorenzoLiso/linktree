@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juveniles - Boca Juniors</title>
+  <link rel="stylesheet" href="juveniles.css">
+</head>
+
+<body>
+  <div class="preloader">
+    <img src="boca.png" alt="Boca Juniors Logo" class="preloader-logo">
+  </div>
+  <div class="main-bg"></div>
+  <div class="navbar">
+    <div class="navbar-left">
+      <span class="menu-icon" id="menuBtn">☰</span>
+      <span class="club-title"> BOCA JUNIORS <span>\ PLAYERS</span></span>
+    </div>
+    <div class="navbar-right">
+      <img src="imagenes/boca.png" alt="Boca Juniors">
+    </div>
+  </div>
+  <div class="side-menu" id="sideMenu">
+    <ul>
+      <li><a href="index.html">NEWS</a></li>
+      <li><a href="players.html">TEAM </a></li>
+      <li><a href="https://www.bocashop.com.ar/" target="_blank">SHOP</a></li>
+    </ul>
+  </div>
+  <section class="noticias">
+    <h2>Noticias Destacadas</h2>
+    <ul>
+      <li>⚽ La Reserva perdio 0-2 contra River en el Superclásico juvenil.</li>
+      <li>🇦🇷 Tres juveniles convocados a la Selección Sub-20.</li>
+      <li>📈 Tomas Aranda renovo hasta Diciembre de 2026</li>
+    </ul>
+  </section>
+
+  <section class="planteles">
+    <h2>Planteles por Categoría</h2>
+    <div class="categoria">
+      <h3>Reserva</h3>
+      <p>DT: Mariano Herrón</p>
+      <p>Jugadores: Tomas Aranda, Santiago Dalmasso, Valentino Simoni, Dylan Gorosito, Sebastian Diaz, Walter Molas,
+        Kevin Gimenez, Facundo Herrera, Iker Zufiaurre, Joaquin Ruiz</p>
+    </div>
+    <div class="categoria">
+      <h3>4ta División</h3>
+      <p>DT: Silvio Rudman </p>
+      <p>Jugadores: Fernando Rodríguez; Kevin Giménez, Gian Gadiel Paoli, Luciano Vallejo, Tomás López; Lucas Galván,
+        Tobías Rodríguez, Juan Pablo Moreno, Fabricio Sena; Jerónimo Campos. </p>
+    </div>
+  </section>
+
+  <section class="destacados">
+    <h2>Jugadores a Seguir</h2>
+    <div class="jugador">
+      <h4>Valentino Simoni (2004)</h4>
+      <p>9 de la reserva, tiene 8 goles en 12 partidos.</p>
+    </div>
+    <div class="jugador">
+      <h4>Mateo Mendia (2004)</h4>
+      <p>Defensor central con seguridad y anteriormente convocado a la Sub-20.</p>
+    </div>
+  </section>
+
+  <section class="fixture">
+    <h2>Resultados y Próximos Partidos</h2>
+    <table>
+      <tr>
+        <th>Categoría</th>
+        <th>Último Partido</th>
+        <th>Próximo Partido</th>
+      </tr>
+      <tr>
+        <td>Reserva</td>
+        <td>1-2 vs River</td>
+        <td>Boca vs Lanús</td>
+      </tr>
+      <tr>
+        <td>5ta</td>
+        <td>1-1 vs Banfield</td>
+        <td>Boca vs San Lorenzo</td>
+      </tr>
+    </table>
+  </section>
+
+  <section class="galeria">
+    <h2>Galería</h2>
+    <div class="imagenes">
+      <img src="imagenes/juveniles.png" alt="Entrenamiento juvenil">
+      <img src="imagenes/bocareserva.jpg" alt="foto de la Reserva">
+    </div>
+  </section>
+
+  <section class="historia">
+    <h2>Historia de la Cantera</h2>
+    <p>De las inferiores surgieron ídolos como Tévez, Battaglia y Gago. La cantera xeneize ha sido reconocida por su
+      capacidad formadora y sus títulos juveniles.</p>
+  </section>
+  <script>
+    // Menú hamburguesa
+    const menuBtn = document.getElementById('menuBtn');
+    const sideMenu = document.getElementById('sideMenu');
+    let menuOpen = false;
+
+    menuBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      menuOpen = !menuOpen;
+      sideMenu.classList.toggle('active', menuOpen);
+
+      // Cerrar estadísticas si están abiertas
+      document.querySelectorAll('.toggle-stats:checked').forEach(checkbox => {
+        checkbox.checked = false;
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (menuOpen && !sideMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+        sideMenu.classList.remove('active');
+        menuOpen = false;
+      }
+    });
+
+    // Preloader
+    window.addEventListener('load', () => {
+      const preloader = document.querySelector('.preloader');
+      preloader.classList.add('fade-out');
+      setTimeout(() => {
+        preloader.style.display = 'none';
+      }, 500); // Match fade-out duration
+    });
+  </script>
+  <footer class="footer">
+    <p>© 2025 Juntos Siempre - Boca Juniors. Todos los derechos reservados.</p>
+  </footer>
+</body>
+
+</html>

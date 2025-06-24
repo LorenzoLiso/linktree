@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ídolos Xeneizes - CABJ</title>
+  <link rel="stylesheet" href="idolos.css">
+</head>
+
+<body>
+  <div class="preloader">
+    <img src="boca.png" alt="Boca Juniors Logo" class="preloader-logo">
+  </div>
+  <div class="main-bg"></div>
+  <div class="navbar">
+    <div class="navbar-left">
+      <span class="menu-icon" id="menuBtn">☰</span>
+      <span class="club-title"> BOCA JUNIORS <span>\ IDOLOS</span></span>
+    </div>
+    <div class="navbar-right">
+      <img src="imagenes/boca.png" alt="Boca Juniors">
+    </div>
+  </div>
+  <div class="side-menu" id="sideMenu">
+    <ul>
+      <li><a href="index.html">NEWS</a></li>
+      <li><a href="players.html">PLAYERS</a></li>
+      <li><a href="https://www.bocashop.com.ar/" target="_blank">SHOP</a></li>
+    </ul>
+  </div>
+  <div class="idolos-container">
+    <div class="idolo-card">
+      <img src="imagenes/riquelme.png" alt="Juan Román Riquelme">
+      <h3>Juan Román Riquelme</h3>
+      <p>El último 10. Ídolo máximo, referente de una era dorada. Magia y temple en la Bombonera.</p>
+    </div>
+    <div class="idolo-card">
+      <img src="imagenes/palermo.png" alt="Martín Palermo">
+      <h3>Martín Palermo</h3>
+      <p>El Loco. Goleador histórico del club. Inolvidables sus festejos y goles heroicos.</p>
+    </div>
+    <div class="idolo-card">
+      <img src="imagenes/tevez.png" alt="Carlos Tévez">
+      <h3>Carlos Tévez</h3>
+      <p>El Apache. De Fuerte Apache a ídolo boquense. Entrega, goles y amor eterno por el club.</p>
+    </div>
+    <div class="idolo-card">
+      <img src="imagenes/paredes.png" alt="Leandro Paredes">
+      <h3>Leandro Paredes</h3>
+      <p>El volante elegante. De la cantera a la élite europea. Técnica, visión y corazón xeneize desde las inferiores.
+      </p>
+    </div>
+    <div class="idolo-card">
+      <img src="imagenes/maradona.png" alt="Leandro Paredes">
+      <h3>Diego Armando Maradona</h3>
+      <p>El Diez eterno. Su paso breve, pero inolvidable. Magia, pasión y una Bombonera rendida ante su genio.
+      </p>
+    </div>
+    <div class="idolo-card">
+      <img src="imagenes/guillermo.png" alt="Guillermo Barros Schelotto">
+      <h3>Guillermo Barros Schelotto</h3>
+      <p>El Mellizo. Hábil, punzante y decisivo. Ídolo como jugador y multicampeón como técnico.</p>
+    </div>
+    <div class="idolo-card">
+      <img src="imagenes/Battaglia.png" alt="Leandro Paredes">
+      <h3>Sebastian Battaglia</h3>
+      <p>El León. Máximo ganador del club como jugador. Garra, entrega y liderazgo desde el mediocampo.</p>
+    </div>
+    <div class="idolo-card">
+      <img src="imagenes/bianchi.png" alt="Leandro Paredes">
+      <h3>Carlos Bianchi</h3>
+      <p>El Virrey. El DT más ganador de la historia. Construyó una era dorada con títulos, gloria y mística copera.</p>
+    </div>
+    <div class="idolo-card">
+      <img src="imagenes/clemente.png" alt="Clemente Rodríguez">
+      <h3>Clemente Rodriguez </h3>
+      <p>Rojitas, jugó 222 partidos oficial, marcó 79 goles y ganó 5
+        títulos locales. Dueño de un talento inigualable. </p>
+    </div>
+           <footer class="footer">
+            <p>© 2025 Juntos Siempre - Boca Juniors. Todos los derechos reservados.</p>
+        </footer>
+
+    <script>
+      // Menú hamburguesa
+      const menuBtn = document.getElementById('menuBtn');
+      const sideMenu = document.getElementById('sideMenu');
+      let menuOpen = false;
+
+      menuBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        menuOpen = !menuOpen;
+        sideMenu.classList.toggle('active', menuOpen);
+
+        // Cerrar estadísticas si están abiertas
+        document.querySelectorAll('.toggle-stats:checked').forEach(checkbox => {
+          checkbox.checked = false;
+        });
+      });
+
+      document.addEventListener('click', (e) => {
+        if (menuOpen && !sideMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+          sideMenu.classList.remove('active');
+          menuOpen = false;
+        }
+      });
+      window.addEventListener('load', () => {
+        const preloader = document.querySelector('.preloader');
+        preloader.classList.add('fade-out');
+        setTimeout(() => {
+          preloader.style.display = 'none';
+        }, 500);
+      });</script>
+
+</body>
+
+</html>

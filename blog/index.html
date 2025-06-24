@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Últimas Noticias - CABJ</title>
+  <link rel="stylesheet" href="news.css">
+</head>
+
+<body>
+  <div class="top-bar">
+    <img src="imagenes/boca.png" alt="Escudo de Boca Juniors">
+    <span class="menu-icon" id="menuBtn">☰</span>
+    <span class="club-title"> BOCA JUNIORS <span>\ NEWS</span></span>
+    <div class="side-menu" id="sideMenu">
+      <ul>
+        <li><a href="index.html">NEWS</a></li>
+        <li><a href="players.html">TEAM </a></li>
+        <li><a href="https://www.bocashop.com.ar/" target="_blank">SHOP</a></li>
+      </ul>
+    </div>
+
+  </div>
+  <div class="main-news">
+    <img src="imagenes/bocabayern.png" alt="Plantel de Boca">
+    <div class="main-news-text">
+      <h2>JUNTOS SIEMPRE</h2>
+      <p>Boca no pudo contra el Bayern.</p>
+      <a href="noticia1.html">VER NOTICIA</a>
+    </div>
+  </div>
+  <div class="news-strip">FÚTBOL NOTICIAS</div>
+  <div class="news-thumbnails">
+    <div class="thumbnail">
+      <a href="noticia4.html">
+        <img src="imagenes/bocabenf.png" alt="Mundial de Clubes">
+       Benfica vs Boca
+        <small>Mayo 18, 2025</small>
+      </a>
+    </div>
+    <div class="thumbnail">
+      <a href="noticia3.html">
+        <img src="imagenes/bocavsauckland2.jpg" alt="Noticia Principal">
+       Auckland City vs Boca
+        <small>Mayo 18, 2025</small>
+      </a>
+    </div>
+    <div class="thumbnail">
+      <a href="noticia5.html">
+        <img src="imagenes/russo.png" alt="">
+        Russo vuelve a Boca
+        <small>Mayo 16, 2025</small>
+      </a>
+    </div>
+    <div class="thumbnail">
+      <a href="noticia2.html">
+        <img src="imagenes/mundialclubes.png" alt="Mundial de Clubes">
+        Mundial de Clubes
+        <small>Mayo 15, 2025</small>
+      </a>
+    </div>
+  </div>
+  
+  
+
+  <!-- SECCIONES ESPECIALES -->
+  <div class="news-strip">SECCIONES ESPECIALES</div>
+  <div class="news-thumbnails">
+    <div class="thumbnail">
+      <a href="historia.html">
+        <img src="imagenes/historia.png" alt="Historia de Boca">
+        HISTORIA DEL CLUB
+        <small>Desde 1905</small>
+      </a>
+    </div>
+    <div class="thumbnail">
+      <a href="idolos.html">
+        <img src="imagenes/idolos.jpg" alt="Ídolos Xeneizes">
+        ÍDOLOS XENEIZES
+        <small>Riquelme, Palermo, Tévez...</small>
+      </a>
+    </div>
+    <div class="thumbnail">
+      <a href="juveniles.html">
+        <img src="imagenes/rey.jpg" alt="Juveniles">
+        PROMESAS JUVENILES
+        <small>La cantera azul y oro</small>
+      </a>
+    </div>
+  </div>
+ <footer class="footer">
+        <p>© 2025 Juntos Siempre - Boca Juniors. Todos los derechos reservados.</p>
+    </footer>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const sideMenu = document.getElementById('sideMenu');
+    let menuOpen = false;
+
+    menuBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      menuOpen = !menuOpen;
+      sideMenu.classList.toggle('active', menuOpen);
+
+      // Cerrar estadísticas si están abiertas
+      document.querySelectorAll('.toggle-stats:checked').forEach(checkbox => {
+        checkbox.checked = false;
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (menuOpen && !sideMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+        sideMenu.classList.remove('active');
+        menuOpen = false;
+      }
+    });
+
+    // Preloader
+    window.addEventListener('load', () => {
+      const preloader = document.querySelector('.preloader');
+      preloader.classList.add('fade-out');
+      setTimeout(() => {
+        preloader.style.display = 'none';
+      }, 500); // Match fade-out duration
+    });
+  </script>
+</body>
+
+</html>

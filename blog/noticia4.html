@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boca vs Benfica</title>
+  <link rel="stylesheet" href="noticia.css">
+</head>
+
+<body>
+  <header class="top-bar">
+    <span class="menu-icon" id="menuBtn">☰</span>
+    <span class="club-title"> BOCA JUNIORS <span>\ NEWS</span></span>
+    <div class="side-menu" id="sideMenu">
+      <ul>
+        <li><a href="index.html">NEWS</a></li>
+        <li><a href="players.html">TEAM </a></li>
+        <li><a href="https://www.bocashop.com.ar/" target="_blank">SHOP</a></li>
+      </ul>
+      </nav>
+    </div>
+    <img src="imagenes/boca.png" alt="Boca Juniors Shield" class="shield-logo">
+  </header>
+
+  <section class="banner">
+    <h2>FÚTBOL NOTICIAS</h2>
+  </section>
+
+  <div class="container">
+    <main class="contenido">
+      <article>
+        <p>A Boca se le escapó el triunfo en el final y empató 2-2 con Benfica
+          Punto con sabor a poco para el Xeneize en su debut en el Mundial de Clubes.</p>
+        <img src="imagenes/bocabenfica.jpg" alt="Boca Juniors vs Benfica" width="100%">
+        <p>BOCA debutó en el Mundial de Clubes con un empate que le dejó sabor a poco. Vencía 2-0 a Benfica, no pudo
+          aguantar el resultado y con diez hombres las Águilas lo igualaron 2-2 con un cabezazo de Nicolás Otamendi en
+          el final del partido.
+
+
+          Miguel Ángel Russo comenzó su tercer ciclo al frente del Xeneize con un 4-2-3-1 sin Marcos Rojo, Milton
+          Delgado ni Edinson Cavani.</p>
+        <p>Como se podía observar en los días previos, una marea azul y oro invadió la ciudad costera y hace sentir
+          local a Boca en el Hard Rock.
+          Benfica tomó la iniciativa en el comienzo del encuentro y puso contra las cuerdas a Boca en el primer cuarto
+          de hora. Sin embargo, con el correr del reloj el equipo de Russo se acomodó en la cancha y revirtió el
+          trámite.</p>
+    </main>
+    </article>
+
+    <aside class="sidebar">
+      <h3>Noticias Relacionadas</h3>
+      <ul>
+        <li><a href="noticia3.html">20/06/2025 - Boca vs Auckland</a></li>
+        <li><a href="noticia2.html">14/05/2025 - Mundial de Clubes</a></li>
+        <li><a href="noticia1.html">20/06/2025 - Boca vs Bayern</a></li>
+        <li><a href="noticia5.html">5/06/2025 - Russo a Boca</a></li>
+      </ul>
+    </aside>
+  </div>
+
+  <footer class="footer">
+    <p>© 2025 Juntos Siempre - Boca Juniors. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    // Menú hamburguesa
+    const menuBtn = document.getElementById('menuBtn');
+    const sideMenu = document.getElementById('sideMenu');
+    let menuOpen = false;
+
+    menuBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      menuOpen = !menuOpen;
+      sideMenu.classList.toggle('active', menuOpen);
+
+      // Cerrar estadísticas si están abiertas
+      document.querySelectorAll('.toggle-stats:checked').forEach(checkbox => {
+        checkbox.checked = false;
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (menuOpen && !sideMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+        sideMenu.classList.remove('active');
+        menuOpen = false;
+      }
+    });
+
+    // Preloader
+    window.addEventListener('load', () => {
+      const preloader = document.querySelector('.preloader');
+      preloader.classList.add('fade-out');
+      setTimeout(() => {
+        preloader.style.display = 'none';
+      }, 500); // Match fade-out duration
+    });
+  </script>
