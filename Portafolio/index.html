@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mi Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">Mi Portfolio</div>
+    <nav class="nav" id="nav">
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#sobremi">Sobre mí</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+  </header>
+
+  <section id="inicio" class="section inicio">
+  <div class="intro-container">
+    <div class="intro-texto">
+      <h1>Hola, soy <span>Lorenzo Liso</span></h1>
+      <p>Desarrollador Web Frontend</p>
+      <a href="#proyectos" class="btn">Ver proyectos</a>
+    </div>
+    <div class="intro-imagen">
+      <img src="fotomia.jpeg" alt="Foto de Lorenzo">
+    </div>
+  </div>
+</section>
+
+
+  <section id="sobremi" class="section">
+    <h2>Sobre mí</h2>
+    <p>
+      ¡Hola! Me llamo Lorenzo y soy un apasionado por el fútbol desde que tengo memoria. Soy fanático de Boca Juniors y
+      sigo cada partido a pesar de Riquelme y su mala dirigencia.
+    </p>
+    <p>
+      Además del fútbol, me encanta programar y crear páginas web. Disfruto transformar ideas en sitios reales,
+      funcionales y atractivos.
+    </p>
+    <p>
+      Actualmente estoy estudiando la carrera de Licenciatura en tecnologia de la informacion en la UADE. Estoy en
+      constante aprendizaje, explorando nuevas tecnologías y mejorando mis habilidades como desarrollador frontend.
+    </p>
+  </section>
+
+  <section id="proyectos" class="section proyectos-simples">
+    <h2>🚀 Mis Proyectos</h2>
+
+    <!-- CALCULADORA -->
+    <div class="bloque-proyecto">
+      <h3>🧮 Calculadora</h3>
+      <p>Una calculadora moderna inspirada en el diseño de Windows, con modo oscuro. Permite realizar operaciones
+        básicas como suma, resta, multiplicación, división y porcentajes. Tiene botones interactivos y una interfaz
+        responsiva.
+      </p>
+
+      <div class="tech-tags">
+        <span class="html">HTML</span>
+        <span class="css">CSS</span>
+        <span class="js">JavaScript</span>
+
+      </div>
+
+      <div class="calculadora">
+        <input type="text" id="display" readonly value="0">
+        <div class="botones">
+          <button onclick="limpiar()">C</button>
+          <button onclick="borrar()">⌫</button>
+          <button onclick="operar('%')">%</button>
+          <button onclick="operar('/')">÷</button>
+          <button onclick="agregar('7')">7</button>
+          <button onclick="agregar('8')">8</button>
+          <button onclick="agregar('9')">9</button>
+          <button onclick="operar('*')">×</button>
+          <button onclick="agregar('4')">4</button>
+          <button onclick="agregar('5')">5</button>
+          <button onclick="agregar('6')">6</button>
+          <button onclick="operar('-')">−</button>
+          <button onclick="agregar('1')">1</button>
+          <button onclick="agregar('2')">2</button>
+          <button onclick="agregar('3')">3</button>
+          <button onclick="operar('+')">+</button>
+          <button onclick="agregar('0')" class="doble">0</button>
+          <button onclick="agregar('.')">.</button>
+          <button onclick="calcular()" class="igual">=</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONVERSOR -->
+    <div class="bloque-proyecto">
+      <h3>💱 Conversor de Monedas</h3>
+      <p>Aplicación que convierte Pesos Argentinos (ARS) a Dólares (USD) o Euros (EUR) usando tasas fijas. Incluye
+        validación de datos, un diseño limpio y responsivo, y muestra el resultado de forma clara.</p>
+      <div class="tech-tags">
+        <span class="html">HTML</span>
+        <span class="css">CSS</span>
+        <span class="js">JavaScript</span>
+      </div>
+      <div class="conversor">
+        <label for="monto">Pesos Argentinos (ARS):</label>
+        <input type="number" id="monto" placeholder="Ej: 1000">
+        <label for="moneda">Convertir a:</label>
+        <select id="moneda">
+          <option value="usd">Dólares (USD)</option>
+          <option value="eur">Euros (EUR)</option>
+        </select>
+        <button onclick="convertir()">Convertir</button>
+        <div id="resultado"></div>
+      </div>
+    </div>
+
+    <!-- GALERÍA -->
+    <div class="bloque-proyecto">
+      <h3>🖼️ Galería de Imágenes</h3>
+      <p>Una galería de imágenes responsiva que permite hacer clic en cada imagen para ampliarla en una ventana
+        superpuesta (lightbox). Incluye flechas para navegar entre imágenes y se cierra con clic o tecla Escape.</p>
+      <div class="tech-tags">
+        <span class="html">HTML </span>
+        <span class="css">CSS</span>
+        <span class="js">JavaScript</span>
+      </div>
+        <div class="galeria-simple">
+          <img src="foto1.avif" alt="Imagen 1" onclick="abrirLightbox(this)">
+          <img src="foto2.jpg" alt="Imagen 2" onclick="abrirLightbox(this)">
+          <img src="foto3.jpg" alt="Imagen 3" onclick="abrirLightbox(this)">
+          <img src="foto4.jpg" alt="Imagen 4" onclick="abrirLightbox(this)">
+          <img src="foto5.jpg" alt="Imagen 5" onclick="abrirLightbox(this)">
+          <img src="foto6.jpg" alt="Imagen 6" onclick="abrirLightbox(this)">
+        </div>
+      </div>
+
+      <!-- LIGHTBOX -->
+      <div id="lightbox" class="lightbox" onclick="cerrarLightbox(event)">
+        <span class="flecha izquierda" onclick="anterior(event)">&#10094;</span>
+        <img id="lightbox-img" src="" alt="Imagen ampliada">
+        <span class="flecha derecha" onclick="siguiente(event)">&#10095;</span>
+      </div>
+  </section>
+
+  <section id="contacto" class="section">
+    <h2>Contacto</h2>
+    <form>
+      <input type="text" placeholder="Nombre" required>
+      <input type="email" placeholder="Correo electrónico" required>
+      <textarea placeholder="Mensaje" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Lorenzo Liso - Todos los derechos reservados</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
